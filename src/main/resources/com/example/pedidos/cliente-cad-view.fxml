@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox prefHeight="412.0" prefWidth="624.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pedidos.ClienteCadView">
+<VBox prefHeight="412.0" prefWidth="624.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pedidos.ClienteCadViewControler">
    <children>
       <Label text="ID">
          <font>

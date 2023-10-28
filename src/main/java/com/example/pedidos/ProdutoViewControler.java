@@ -22,14 +22,15 @@ public class ProdutoViewControler implements Initializable {
         public TableColumn onTelefone;
         public TextField tfPesquisa;
 
-        private void abrirCliente() throws IOException {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("cliente-cad-view.fxml"));
+        private void abrirProduto() throws IOException {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("produto-cad-view.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             Stage stage= new Stage();
-            stage.setTitle("Clientes");
+            stage.setTitle("Cadastro de Produtos");
             stage.setScene(scene);
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
+
         }
 
         @Override
@@ -40,12 +41,12 @@ public class ProdutoViewControler implements Initializable {
         public void onPesquisar(KeyEvent keyEvent) {
         }
 
-        public void onNovoCliente(ActionEvent actionEvent) throws IOException {
-            abrirCliente();
+        public void onNovoProduto(ActionEvent actionEvent) throws IOException {
+            abrirProduto();
         }
 
         public void onAlterar(ActionEvent actionEvent) throws IOException {
-            abrirCliente();
+            abrirProduto();
         }
 
         public void onApagar(ActionEvent actionEvent) {
@@ -56,7 +57,4 @@ public class ProdutoViewControler implements Initializable {
             //tfPesquisa.getParent().getScene().getWindow().hide();
 
         }
-
-
-
 }
