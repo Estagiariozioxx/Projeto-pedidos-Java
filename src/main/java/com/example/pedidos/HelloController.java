@@ -43,7 +43,14 @@ public class HelloController implements Initializable {
         stage.showAndWait();
     }
 
-    public void oncategorias(ActionEvent actionEvent) {
+    public void oncategorias(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("categoria-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage= new Stage();
+        stage.setTitle("Categoria");
+        stage.setScene(scene);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
 
     public void onsair(ActionEvent actionEvent) {
