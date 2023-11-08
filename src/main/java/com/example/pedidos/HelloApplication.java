@@ -1,10 +1,13 @@
 package com.example.pedidos;
 
+import com.example.pedidos.db.DBSingleton;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class HelloApplication extends Application {
@@ -19,6 +22,10 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        if(!DBSingleton.conectar()){
+            JOptionPane.showMessageDialog(null,"erro "+DBSingleton.getConexao().getMensagemErro());
+            Platform.exit();
+        }
         launch();
     }
 }
