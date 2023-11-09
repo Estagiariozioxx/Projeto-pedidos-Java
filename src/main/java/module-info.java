@@ -6,5 +6,7 @@ module com.example.pedidos {
 
 
     opens com.example.pedidos to javafx.fxml;
+    opens com.example.pedidos.db.entidades;
     exports com.example.pedidos;
+    exports com.example.pedidos.db.entidades;
 }
