@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -29,5 +30,18 @@ public class ClienteCadViewControler implements Initializable {
     }
 
 
+    public void onPesquisar(KeyEvent keyEvent) {
+    }
 
+    public void onNovoCliente(ActionEvent actionEvent) {
+    }
+
+    public void onAlterar(ActionEvent actionEvent) {
+    }
+
+    public void onApagar(ActionEvent actionEvent) {
+    }
+
+    public void onFechar(ActionEvent actionEvent) {
+    }
 }
