@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox prefHeight="412.0" prefWidth="624.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pedidos.ClienteCadViewControler">
    <children>
       <Label text="ID">
@@ -66,12 +65,12 @@
             <Insets bottom="10.0" />
          </padding>
       </TextField>
-      <Label layoutX="20.0" layoutY="201.0" text="Telefone">
+      <Label layoutX="20.0" layoutY="201.0" text="Email">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tftelefone" layoutX="20.0" layoutY="221.0" prefHeight="37.0" prefWidth="800.0">
+      <TextField fx:id="tfemail" layoutX="20.0" layoutY="221.0" prefHeight="37.0" prefWidth="800.0">
          <font>
             <Font size="15.0" />
          </font>

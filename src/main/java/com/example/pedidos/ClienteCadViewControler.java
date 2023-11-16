@@ -1,7 +1,11 @@
 package com.example.pedidos;
 
+import com.example.pedidos.db.DBSingleton;
+import com.example.pedidos.db.dals.ClienteDAL;
+import com.example.pedidos.db.entidades.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -14,7 +18,7 @@ public class ClienteCadViewControler implements Initializable {
     public TextField tfnome;
     public TextField tfcep;
     public TextField tfendereco;
-    public TextField tftelefone;
+    public TextField tfemail;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -22,6 +26,12 @@ public class ClienteCadViewControler implements Initializable {
     }
 
     public void onConfirmar(ActionEvent actionEvent) {
+        Cliente cliente= new Cliente(0,tfnome.getText(),tfendereco.getText(),"","",tfcep.getText(),"",tfemail.getText());
+        if(!new ClienteDAL().gravar(cliente)){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(DBSingleton.getConexao().getMensagemErro());
+            alert.showAndWait();
+        }
         ((Button)actionEvent.getSource()).getScene().getWindow().hide();
     }
 

@@ -1,5 +1,6 @@
 package com.example.pedidos;
 
+import com.example.pedidos.db.DBSingleton;
 import com.example.pedidos.db.dals.ClienteDAL;
 import com.example.pedidos.db.entidades.Cliente;
 import javafx.collections.FXCollections;
@@ -46,8 +47,8 @@ public class ClienteViewController implements Initializable {
     }
 
     public void onNovoCliente(ActionEvent actionEvent) throws IOException {
-        System.out.println("eeeeeeeeee");
         abrirCadCliente();
+        preencherTabela("");
 
     }
 
@@ -60,6 +61,12 @@ public class ClienteViewController implements Initializable {
     }
 
     public void onApagar(ActionEvent actionEvent) {
+
+        if(tableView.getSelectionModel().getSelectedItem()!=null){
+            //perguntar se apagar
+            new ClienteDAL().apagar(tableView.getSelectionModel().getSelectedItem());
+            preencherTabela("");
+        }
     }
 
     public void onFechar(ActionEvent actionEvent) {
